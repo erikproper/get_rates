@@ -18,6 +18,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strconv"
 	"time"
 
 	"get_rates/config"
@@ -27,9 +28,16 @@ import (
 )
 
 func main() {
-	credFile := flag.String("credentials", "credentials.json", "path to service account credentials JSON")
-	cacheFile := flag.String("cache", "cache/rates.json", "path to rate cache file")
+	credFile  := flag.String("credentials", "credentials.json", "path to service account credentials JSON")
+	cacheFile := flag.String("cache",       "cache/rates.json",  "path to rate cache file")
+	fundsFile := flag.String("funds",       "funds.csv",         "path to funds CSV file")
 	flag.Parse()
+
+	funds, err := config.LoadFunds(*fundsFile)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "ERROR: loading funds: %v\n", err)
+		os.Exit(1)
+	}
 
 	c, err := cache.Load(*cacheFile)
 	if err != nil {
@@ -39,7 +47,7 @@ func main() {
 
 	rows := [][]interface{}{{"ISIN", "Name", "Value", "Last update"}}
 
-	for _, fund := range config.Funds {
+	for _, fund := range funds {
 		time.Sleep(250 * time.Millisecond)
 
 		price, scrapeErr := scraper.Scrape(fund)
@@ -68,7 +76,11 @@ func main() {
 			dateStr = fetchedAt.Format("02-01-2006 15:04")
 		}
 		fmt.Printf("Added %s  %s  %s\n", fund.ISIN, fund.Name, price)
-		rows = append(rows, []interface{}{fund.ISIN, fund.Name, price, dateStr})
+		var priceVal interface{} = price
+		if f, err := strconv.ParseFloat(price, 64); err == nil {
+			priceVal = f
+		}
+		rows = append(rows, []interface{}{fund.ISIN, fund.Name, priceVal, dateStr})
 	}
 
 	if err := cache.Save(*cacheFile, c); err != nil {

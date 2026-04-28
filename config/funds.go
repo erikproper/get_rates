@@ -56,7 +56,14 @@ func LoadFunds(path string, separator rune) ([]model.TFund, error) {
 		if !ok {
 			return nil, fmt.Errorf("line %d: unknown source %q", i+1, row[2])
 		}
-		funds = append(funds, model.TFund{ISIN: row[0], Name: row[1], Source: src})
+		assetKind, exchange := "", ""
+		if len(row) > 3 {
+			assetKind = row[3]
+		}
+		if len(row) > 4 {
+			exchange = row[4]
+		}
+		funds = append(funds, model.TFund{ISIN: row[0], Name: row[1], Source: src, AssetKind: assetKind, Exchange: exchange})
 	}
 
 	if len(funds) == 0 {

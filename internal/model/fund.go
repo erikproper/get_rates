@@ -25,7 +25,9 @@ const (
 
 // TFund describes a single fund to be scraped.
 type TFund struct {
-	ISIN   string
-	Name   string
-	Source TSource
+	ISIN      string
+	Name      string
+	Source    TSource
+	AssetKind string // column C of "Export PDT actual", e.g. "Stock market"
+	Exchange  string // column E of "Export PDT actual", e.g. "Tradegate" or "Funds"
 }

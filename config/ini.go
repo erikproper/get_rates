@@ -25,6 +25,7 @@ import (
 type TConfig struct {
 	FundsFile     string
 	BreakdownFile string
+	CacheFile     string
 	Separator     rune
 }
 
@@ -34,6 +35,7 @@ func defaultConfig() TConfig {
 	return TConfig{
 		FundsFile:     "funds.csv",
 		BreakdownFile: "breakdown.csv",
+		CacheFile:     "cache/rates.json",
 		Separator:     ';',
 	}
 }
@@ -82,6 +84,8 @@ func LoadConfig(path string) (TConfig, error) {
 			cfg.FundsFile = strings.TrimSpace(val)
 		case "breakdown":
 			cfg.BreakdownFile = strings.TrimSpace(val)
+		case "cache":
+			cfg.CacheFile = strings.TrimSpace(val)
 		case "separator":
 			if r := []rune(strings.TrimSpace(val)); len(r) == 1 {
 				cfg.Separator = r[0]

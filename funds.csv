@@ -24,13 +24,13 @@ IE00BYZK4552;iShares Automation & Robotics UCITS ETF;TGD;Stock market;Tradegate
 IE00B53SZB19;iShares Nasdaq 100 UCITS ETF;TGD;Stock market;Tradegate
 IE000E7EI9P0;Amundi S&P Global Information Technology ESG UCITS ETF;TGD;Stock market;Tradegate
 IE00BF5DXP42;First Trust Index Innovative Transaction & Process UCITS ETF;TGD;Stock market;Tradegate
-NL0012706154;BND Wereld Indexfonds Hedged;FTD;;
-NL0012706196;BND Wereld Obligatie Indexfonds;FTD;;
-NL0012706238;BND Wereld Indexfonds Unhedged;FTD;;
-NL0014040164;BND Emerging Markets Indexfonds;FTD;;
-NL0013546955;BND Small Cap Wereld Indexfonds Carbon Screened;FTD;;
-NL0012706220;BND Euro Investment Grade Obligatie Indexfonds;FTD;;
-NL0012706204;BND Euro Staatsobligatie Indexfonds;FTD;;
+NL0012706154;BND Wereld Indexfonds Hedged;FTD;Stock market;Funds
+NL0012706196;BND Wereld Obligatie Indexfonds;FTD;Stock market;Funds
+NL0012706238;BND Wereld Indexfonds Unhedged;FTD;Stock market;Funds
+NL0014040164;BND Emerging Markets Indexfonds;FTD;Stock market;Funds
+NL0013546955;BND Small Cap Wereld Indexfonds Carbon Screened;FTD;Stock market;Funds
+NL0012706220;BND Euro Investment Grade Obligatie Indexfonds;FTD;Stock market;Funds
+NL0012706204;BND Euro Staatsobligatie Indexfonds;FTD;Stock market;Funds
 NL0012706279;BND Euro Staatsobligatie Indexfonds Inflatie;FTD;Stock market;Funds
 IE00BVVQ9K69;Selected Screened FTSE Developed World II (B) Common Contractual Fund - EUR Hedged Acc;FTD;Stock market;Funds
 IE000FZ5BIF1;Vanguard Global Government Bond Index EUR Hedged Acc;FTD;Stock market;Funds

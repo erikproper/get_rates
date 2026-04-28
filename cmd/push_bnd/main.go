@@ -22,6 +22,7 @@ import (
 	"os/exec"
 	"time"
 
+	"get_rates/config"
 	"get_rates/internal/bnd"
 	"get_rates/internal/sheets"
 )
@@ -36,8 +37,14 @@ func readInput() ([]byte, error) {
 }
 
 func main() {
-	credFile := flag.String("credentials", "credentials.json", "path to service account credentials JSON")
+	configFile := flag.String("config",      "config.ini",       "path to config file")
+	credFile   := flag.String("credentials", "credentials.json", "path to service account credentials JSON")
 	flag.Parse()
+
+	if _, err := config.LoadConfig(*configFile); err != nil {
+		fmt.Fprintf(os.Stderr, "ERROR: loading config: %v\n", err)
+		os.Exit(1)
+	}
 
 	data, err := readInput()
 	if err != nil {

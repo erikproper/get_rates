@@ -88,8 +88,16 @@ func parseRow(fields []string) TRow {
 }
 
 // ToSlice returns the row as a slice suitable for the Sheets API.
+// Numeric fields are converted to float64 so Sheets does not prepend an apostrophe.
 func (r TRow) ToSlice() []interface{} {
-	return []interface{}{r.Name, r.Aantal, r.Koers, r.Datum, r.Weging, r.Waarde}
+	return []interface{}{r.Name, numericVal(r.Aantal), numericVal(r.Koers), r.Datum, numericVal(r.Weging), r.Waarde}
+}
+
+func numericVal(s string) interface{} {
+	if f, err := strconv.ParseFloat(s, 64); err == nil {
+		return f
+	}
+	return s
 }
 
 // --- normalisation ---

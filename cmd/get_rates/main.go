@@ -28,12 +28,23 @@ import (
 )
 
 func main() {
-	credFile  := flag.String("credentials", "credentials.json", "path to service account credentials JSON")
-	cacheFile := flag.String("cache",       "cache/rates.json",  "path to rate cache file")
-	fundsFile := flag.String("funds",       "funds.csv",         "path to funds CSV file")
+	configFile := flag.String("config",      "config.ini",        "path to config file")
+	credFile   := flag.String("credentials", "credentials.json",  "path to service account credentials JSON")
+	cacheFile  := flag.String("cache",       "cache/rates.json",  "path to rate cache file")
+	fundsFlag  := flag.String("funds",       "",                  "path to funds CSV (overrides config)")
 	flag.Parse()
 
-	funds, err := config.LoadFunds(*fundsFile)
+	cfg, err := config.LoadConfig(*configFile)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "ERROR: loading config: %v\n", err)
+		os.Exit(1)
+	}
+	fundsFile := cfg.FundsFile
+	if *fundsFlag != "" {
+		fundsFile = *fundsFlag
+	}
+
+	funds, err := config.LoadFunds(fundsFile)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "ERROR: loading funds: %v\n", err)
 		os.Exit(1)

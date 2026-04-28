@@ -44,7 +44,7 @@ func main() {
 		fundsFile = *fundsFlag
 	}
 
-	funds, err := config.LoadFunds(fundsFile)
+	funds, err := config.LoadFunds(fundsFile, cfg.Separator)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "ERROR: loading funds: %v\n", err)
 		os.Exit(1)

@@ -1,42 +1,42 @@
-ISIN,Name,Source
-IE00B4ND3602,iShares Physical Gold ETC,TGD
-IE00B4NCWG09,iShares Physical Silver ETC,TGD
-NL0000337319,Koninklijke BAM Groep NV,TGD
-IE000U9ODG19,iShares Global Aerospace & Defence ETF,TGD
-IE00B4L5Y983,iShares Core MSCI World UCITS ETF,TGD
-DE0007030009,Rheinmetall AG,TGD
-BMG3602E1084,Flow Traders Ltd,TGD
-IE000YYE6WK5,VanEck Defense UCITS ETF A,TGD
-IE00B5L8K969,iShares MSCI EM Asia UCITS ETF,TGD
-IE00BK5BC891,L&G Clean Water UCITS ETF,TGD
-JE00BQRFDY49,WisdomTree Core Physical Silver ETC,TGD
-JE00BN2CJ301,WisdomTree Core Physical Gold ETC,TGD
-DE000A0H08F7,iShares STOXX Europe 600 Construction & Materials ETF,TGD
-IE0006WW1TQ4,Xtrackers MSCI World ex USA UCITS ETF 1C,TGD
-IE00BD1F4M44,iShares Edge MSCI USA Value Factor UCITS ETF,TGD
-IE00B5BMR087,iShares Core S&P 500 UCITS ETF,TGD
-IE000CFH1JX2,iShares Global Water UCITS ETF,TGD
-IE00BYTRRB94,SPDR MSCI World Health Care UCITS ETF,TGD
-IE00BM67HK77,Xtrackers MSCI World Health Care UCITS ETF 1C,TGD
-IE00BMH5Y327,Global X Data Center REITS & Digital Infrastructure ETF,TGD
-IE000CK5G8J7,iShares Global Infrastructure UCITS ETF,TGD
-IE00BYZK4552,iShares Automation & Robotics UCITS ETF,TGD
-IE00B53SZB19,iShares Nasdaq 100 UCITS ETF,TGD
-IE000E7EI9P0,Amundi S&P Global Information Technology ESG UCITS ETF,TGD
-IE00BF5DXP42,First Trust Index Innovative Transaction & Process UCITS ETF,TGD
-NL0012706154,BND Wereld Indexfonds Hedged,FTD
-NL0012706196,BND Wereld Obligatie Indexfonds,FTD
-NL0012706238,BND Wereld Indexfonds Unhedged,FTD
-NL0014040164,BND Emerging Markets Indexfonds,FTD
-NL0013546955,BND Small Cap Wereld Indexfonds Carbon Screened,FTD
-NL0012706220,BND Euro Investment Grade Obligatie Indexfonds,FTD
-NL0012706204,BND Euro Staatsobligatie Indexfonds,FTD
-NL0012706279,BND Euro Staatsobligatie Indexfonds Inflatie,FTD
-IE00BVVQ9K69,Selected Screened FTSE Developed World II (B) Common Contractual Fund - EUR Hedged Acc,FTD
-IE000FZ5BIF1,Vanguard Global Government Bond Index EUR Hedged Acc,FTD
-IE00BNDS0V25,Vanguard ESG Global Corporate Bond Index Fund EUR Hedged Acc,FTD
-IE00BVVQBD33,Vanguard Selected Screened FTSE Developed II (B) World Common Contractual Fd Instl B EUR Acc,FTD
-NL0013089147,Northern Trust UCITS FGR Fund - Emerging Markets Screened Equity Index FGR Fund E EUR,FTD
-NL0013552094,NT World Small Cap Low Carbon Equity Index FGR Feeder Fund Class C EUR Units,FTD
-IE00BYSX5D68,Vanguard Selected Screened Euro Investment Grade Bond Index Fund EUR Acc,FTD
-IE0007472990,Vanguard Euro Government Bond Index Fund EUR Acc,FTD
+ISIN;Name;Source
+IE00B4ND3602;iShares Physical Gold ETC;TGD
+IE00B4NCWG09;iShares Physical Silver ETC;TGD
+NL0000337319;Koninklijke BAM Groep NV;TGD
+IE000U9ODG19;iShares Global Aerospace & Defence ETF;TGD
+IE00B4L5Y983;iShares Core MSCI World UCITS ETF;TGD
+DE0007030009;Rheinmetall AG;TGD
+BMG3602E1084;Flow Traders Ltd;TGD
+IE000YYE6WK5;VanEck Defense UCITS ETF A;TGD
+IE00B5L8K969;iShares MSCI EM Asia UCITS ETF;TGD
+IE00BK5BC891;L&G Clean Water UCITS ETF;TGD
+JE00BQRFDY49;WisdomTree Core Physical Silver ETC;TGD
+JE00BN2CJ301;WisdomTree Core Physical Gold ETC;TGD
+DE000A0H08F7;iShares STOXX Europe 600 Construction & Materials ETF;TGD
+IE0006WW1TQ4;Xtrackers MSCI World ex USA UCITS ETF 1C;TGD
+IE00BD1F4M44;iShares Edge MSCI USA Value Factor UCITS ETF;TGD
+IE00B5BMR087;iShares Core S&P 500 UCITS ETF;TGD
+IE000CFH1JX2;iShares Global Water UCITS ETF;TGD
+IE00BYTRRB94;SPDR MSCI World Health Care UCITS ETF;TGD
+IE00BM67HK77;Xtrackers MSCI World Health Care UCITS ETF 1C;TGD
+IE00BMH5Y327;Global X Data Center REITS & Digital Infrastructure ETF;TGD
+IE000CK5G8J7;iShares Global Infrastructure UCITS ETF;TGD
+IE00BYZK4552;iShares Automation & Robotics UCITS ETF;TGD
+IE00B53SZB19;iShares Nasdaq 100 UCITS ETF;TGD
+IE000E7EI9P0;Amundi S&P Global Information Technology ESG UCITS ETF;TGD
+IE00BF5DXP42;First Trust Index Innovative Transaction & Process UCITS ETF;TGD
+NL0012706154;BND Wereld Indexfonds Hedged;FTD
+NL0012706196;BND Wereld Obligatie Indexfonds;FTD
+NL0012706238;BND Wereld Indexfonds Unhedged;FTD
+NL0014040164;BND Emerging Markets Indexfonds;FTD
+NL0013546955;BND Small Cap Wereld Indexfonds Carbon Screened;FTD
+NL0012706220;BND Euro Investment Grade Obligatie Indexfonds;FTD
+NL0012706204;BND Euro Staatsobligatie Indexfonds;FTD
+NL0012706279;BND Euro Staatsobligatie Indexfonds Inflatie;FTD
+IE00BVVQ9K69;Selected Screened FTSE Developed World II (B) Common Contractual Fund - EUR Hedged Acc;FTD
+IE000FZ5BIF1;Vanguard Global Government Bond Index EUR Hedged Acc;FTD
+IE00BNDS0V25;Vanguard ESG Global Corporate Bond Index Fund EUR Hedged Acc;FTD
+IE00BVVQBD33;Vanguard Selected Screened FTSE Developed II (B) World Common Contractual Fd Instl B EUR Acc;FTD
+NL0013089147;Northern Trust UCITS FGR Fund - Emerging Markets Screened Equity Index FGR Fund E EUR;FTD
+NL0013552094;NT World Small Cap Low Carbon Equity Index FGR Feeder Fund Class C EUR Units;FTD
+IE00BYSX5D68;Vanguard Selected Screened Euro Investment Grade Bond Index Fund EUR Acc;FTD
+IE0007472990;Vanguard Euro Government Bond Index Fund EUR Acc;FTD

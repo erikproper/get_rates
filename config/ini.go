@@ -21,10 +21,11 @@ import (
 	"strings"
 )
 
-// TConfig holds configurable file paths for the get_rates tools.
+// TConfig holds configurable file paths and format settings for the get_rates tools.
 type TConfig struct {
 	FundsFile     string
 	BreakdownFile string
+	Separator     rune
 }
 
 // --- defaults ---
@@ -33,6 +34,7 @@ func defaultConfig() TConfig {
 	return TConfig{
 		FundsFile:     "funds.csv",
 		BreakdownFile: "breakdown.csv",
+		Separator:     ';',
 	}
 }
 
@@ -80,6 +82,10 @@ func LoadConfig(path string) (TConfig, error) {
 			cfg.FundsFile = strings.TrimSpace(val)
 		case "breakdown":
 			cfg.BreakdownFile = strings.TrimSpace(val)
+		case "separator":
+			if r := []rune(strings.TrimSpace(val)); len(r) == 1 {
+				cfg.Separator = r[0]
+			}
 		}
 	}
 	return cfg, scanner.Err()

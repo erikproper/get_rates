@@ -30,14 +30,16 @@ var sourceByCode = map[string]model.TSource{
 
 // LoadFunds reads the fund list from a CSV file with columns ISIN, Name, Source.
 // The first row is treated as a header and skipped.
-func LoadFunds(path string) ([]model.TFund, error) {
+func LoadFunds(path string, separator rune) ([]model.TFund, error) {
 	f, err := os.Open(path)
 	if err != nil {
 		return nil, fmt.Errorf("opening funds file: %w", err)
 	}
 	defer f.Close()
 
-	records, err := csv.NewReader(f).ReadAll()
+	r := csv.NewReader(f)
+	r.Comma = separator
+	records, err := r.ReadAll()
 	if err != nil {
 		return nil, fmt.Errorf("parsing funds CSV: %w", err)
 	}

@@ -69,6 +69,7 @@ func hasDigit(s string) bool {
 // stripping any thousands separators in the process.
 func normaliseDecimal(price string) string {
 	price = strings.TrimSpace(price)
+	price = strings.ReplaceAll(price, " ", "") // strip space thousands separators (Tradegate)
 	if strings.Contains(price, ".") && strings.Contains(price, ",") {
 		// European format: 1.234,56 → 1234.56
 		price = strings.ReplaceAll(price, ".", "")

@@ -2,8 +2,12 @@
 
 ## Status
 
-Completed (28-04-2026). Both `get_rates` and `push_bnd` are built, tested, and
+Completed (29-04-2026). Both `get_rates` and `push_bnd` are built, tested, and
 installed. The original Bash workflow has been fully replaced.
+
+Extended (29-04-2026): both tools now also write a simulation booking to the PDT
+Bookings tab, recording the current total portfolio value (read from the Portfolio
+sheet's named range `Total`) as a single `Deposit` row at row 4.
 
 ---
 

@@ -182,10 +182,11 @@ The named range `Rates` (used by VLOOKUP in a third tab) should cover
 | Tab | Written by | Notes |
 |---|---|---|
 | `Transactions` | both tools | Rows 1–3 are system headers; data starts at row 4 |
+| `Bookings` | both tools | Row 4 holds one simulation booking; rows 1–3 are system headers |
 
-On every run, rows 4 and below are cleared and fully rewritten. Direct fund positions
-are written as-is; BND pension positions are first expanded into their underlying funds
-via `breakdown.csv`, with positions computed as:
+**Transactions** — on every run, rows 4 and below are cleared and fully rewritten.
+Direct fund positions are written as-is; BND pension positions are first expanded into
+their underlying funds via `breakdown.csv`, with positions computed as:
 
 ```
 target_amount = BND_net_value × division / target_fund_rate
@@ -193,6 +194,11 @@ target_amount = BND_net_value × division / target_fund_rate
 
 where `BND_net_value = position × price × net_pct` (net_pct accounts for the BND
 tax reservation, typically 0.81).
+
+**Bookings** — on every run, row 4 is cleared and a single simulation booking is
+written with the current total portfolio value. The value is read from the named range
+`Total` in the Portfolio sheet (the sheet-computed total, not a recomputed sum).
+Columns: Broker, Date, Time, Action (`Deposit`), Value, Currency (`EUR`).
 
 ---
 

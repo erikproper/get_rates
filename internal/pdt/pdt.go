@@ -9,7 +9,7 @@
  *
  * Creator: Henderik A. Proper (e.proper@acm.org), Luxembourg, in collaboration with Claude.ai
  *
- * Version of: 28.04.2026
+ * Version of: 29.04.2026
  *
  */
 
@@ -28,6 +28,28 @@ import (
 )
 
 // --- public ---
+
+// PushBooking reads the Portfolio tab's Total value and writes a single simulation
+// booking row to the PDT Bookings tab (clearing any previous simulation booking).
+func PushBooking(client *sheets.TClient) error {
+	total, err := client.ReadPortfolioTotal()
+	if err != nil {
+		return fmt.Errorf("reading portfolio total: %w", err)
+	}
+	row := []interface{}{
+		"FlatEx",
+		formatDate(time.Now()),
+		"13:00",
+		"Deposit",
+		total,
+		"EUR",
+	}
+	if err := client.WriteBooking(row); err != nil {
+		return fmt.Errorf("pushing portfolio booking: %w", err)
+	}
+	fmt.Printf("OK: added portfolio booking  total=%.2f EUR\n", total)
+	return nil
+}
 
 // BuildAndPush computes PDT transactions for all positions in the Portfolio tab,
 // applying breakdown.csv entries for BND funds, then writes them to the PDT template.

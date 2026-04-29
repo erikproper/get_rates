@@ -9,7 +9,7 @@
  *
  * Creator: Henderik A. Proper (e.proper@acm.org), Luxembourg, in collaboration with Claude.ai
  *
- * Version of: 28.04.2026
+ * Version of: 29.04.2026
  *
  */
 
@@ -41,6 +41,7 @@ const (
 
 	pdtSheetID           = "1x7U-ieHotiuE6VcVBlDgw8SJC5m36XuNRHzpv4TczjE"
 	pdtTransactionsRange = "'Transactions'!A4:K"
+	pdtBookingsRange     = "'Bookings'!A4:F"
 )
 
 // TClient wraps the Google Sheets service for reading and writing spreadsheet data.
@@ -211,6 +212,34 @@ func (c *TClient) WriteTransactions(rows [][]interface{}) error {
 		return err
 	}
 	return c.writeValues(pdtSheetID, pdtTransactionsRange, "USER_ENTERED", rows)
+}
+
+// ReadPortfolioTotal reads the named range "Total" from the portfolio spreadsheet
+// and returns its value.
+func (c *TClient) ReadPortfolioTotal() (float64, error) {
+	resp, err := c.service.Spreadsheets.Values.
+		Get(portfolioSheetID, "Total").
+		ValueRenderOption("UNFORMATTED_VALUE").
+		Do()
+	if err != nil {
+		return 0, fmt.Errorf("reading named range Total: %w", err)
+	}
+	if len(resp.Values) == 0 || len(resp.Values[0]) == 0 {
+		return 0, fmt.Errorf("named range Total is empty")
+	}
+	f, ok := cellFloat(resp.Values[0][0])
+	if !ok {
+		return 0, fmt.Errorf("named range Total is not numeric: %v", resp.Values[0][0])
+	}
+	return f, nil
+}
+
+// WriteBooking clears the PDT Bookings tab from row 4 and writes a single booking row.
+func (c *TClient) WriteBooking(row []interface{}) error {
+	if err := c.clearRange(pdtSheetID, pdtBookingsRange); err != nil {
+		return err
+	}
+	return c.writeValues(pdtSheetID, pdtBookingsRange, "USER_ENTERED", [][]interface{}{row})
 }
 
 // --- helpers ---

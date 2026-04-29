@@ -9,7 +9,7 @@
  *
  * Creator: Henderik A. Proper (e.proper@acm.org), Luxembourg, in collaboration with Claude.ai
  *
- * Version of: 28.04.2026
+ * Version of: 29.04.2026
  *
  */
 
@@ -117,5 +117,9 @@ func main() {
 
 	if err := pdt.BuildAndPush(client, positions, fundsMap, breakdown, c); err != nil {
 		fmt.Fprintf(os.Stderr, "WARN: updating PDT: %v\n", err)
+	}
+
+	if err := pdt.PushBooking(client); err != nil {
+		fmt.Fprintf(os.Stderr, "WARN: pushing portfolio booking: %v\n", err)
 	}
 }

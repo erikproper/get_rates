@@ -8,7 +8,7 @@
  *
  * Creator: Henderik A. Proper (e.proper@acm.org), Luxembourg, in collaboration with Claude.ai
  *
- * Version of: 28.04.2026
+ * Version of: 05.10.2026
  *
  */
 
@@ -45,8 +45,6 @@ func scrapeOnce(fund model.TFund) (string, error) {
 		return ScrapeFT(fund.ISIN)
 	case model.SourceMorningstar:
 		return ScrapeMorningstar(fund.ISIN)
-	case model.SourceBNDAPI:
-		return ScrapeBND(fund.ISIN)
 	default:
 		return "", fmt.Errorf("unknown source for ISIN %s", fund.ISIN)
 	}

@@ -8,7 +8,7 @@
  *
  * Creator: Henderik A. Proper (e.proper@acm.org), Luxembourg, in collaboration with Claude.ai
  *
- * Version of: 28.04.2026
+ * Version of: 05.10.2026
  *
  */
 
@@ -26,7 +26,6 @@ var sourceByCode = map[string]model.TSource{
 	"TGD": model.SourceTradegate,
 	"FTD": model.SourceFTMarkets,
 	"MSD": model.SourceMorningstar,
-	"BND": model.SourceBNDAPI,
 }
 
 // LoadFunds reads the fund list from a CSV file with columns ISIN, Name, Source.

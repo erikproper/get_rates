@@ -8,7 +8,7 @@
  *
  * Creator: Henderik A. Proper (e.proper@acm.org), Luxembourg, in collaboration with Claude.ai
  *
- * Version of: 28.04.2026
+ * Version of: 05.10.2026
  *
  */
 
@@ -18,10 +18,9 @@ package model
 type TSource int
 
 const (
-	SourceTradegate  TSource = iota
+	SourceTradegate TSource = iota
 	SourceFTMarkets
 	SourceMorningstar
-	SourceBNDAPI
 )
 
 // TFund describes a single fund to be scraped.

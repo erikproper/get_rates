@@ -62,9 +62,9 @@ Rewrite an existing Bash scraping script in Go. The programme scrapes current pr
 
 ### 3. Morningstar (`MSD`)
 
-- URL: `https://global.morningstar.com/nl/beleggingen/fondsen/{ISIN}/quote?marktID=nl`
-- Field: element containing `Koers`, value in EUR
-- Note: Morningstar may load data via JavaScript — verify that raw HTML fetch is sufficient; if not, consider using a headless browser or switching to an alternative source
+- URL: `https://lt.morningstar.com/api/rest.svc/klr5zyak8x/security/screener?...&universeIds=FONLD$$ALL&securityDataPoints=isin|ClosePrice|ClosePriceDate&term={ISIN}`
+- Field: `ClosePrice` (EUR) of the row whose `isin` matches exactly
+- Note: used for the BND funds since the BND robot API (`devrobotapi.azurewebsites.net`) disappeared in October 2026 and the new BND site is behind a Cloudflare challenge
 
 ---
 

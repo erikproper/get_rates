@@ -45,6 +45,8 @@ func scrapeOnce(fund model.TFund) (string, error) {
 		return ScrapeFT(fund.ISIN)
 	case model.SourceMorningstar:
 		return ScrapeMorningstar(fund.ISIN)
+	case model.SourceBNDAPI:
+		return ScrapeBND(fund.ISIN)
 	default:
 		return "", fmt.Errorf("unknown source for ISIN %s", fund.ISIN)
 	}

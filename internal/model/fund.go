@@ -21,6 +21,7 @@ const (
 	SourceTradegate  TSource = iota
 	SourceFTMarkets
 	SourceMorningstar
+	SourceBNDAPI
 )
 
 // TFund describes a single fund to be scraped.

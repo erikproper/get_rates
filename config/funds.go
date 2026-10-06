@@ -26,6 +26,7 @@ var sourceByCode = map[string]model.TSource{
 	"TGD": model.SourceTradegate,
 	"FTD": model.SourceFTMarkets,
 	"MSD": model.SourceMorningstar,
+	"BND": model.SourceBNDAPI,
 }
 
 // LoadFunds reads the fund list from a CSV file with columns ISIN, Name, Source.
